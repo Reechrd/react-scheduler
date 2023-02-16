@@ -108,6 +108,9 @@ export type SchedulerProps = Partial<{
 	onViewChange: (view: View) => void
 
 	renderNavigation: (props: RenderNavigationProps) => JSX.Element
+
+	workingHoursStart: DayHours
+	workingHoursEnd: DayHours
 }>
 
 export type LocalizationTexts = Partial<{

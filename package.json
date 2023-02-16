@@ -8,7 +8,7 @@
         "/dist/**/*"
     ],
     "scripts": {
-        "start": "react-scripts start",
+        "start": "node node_modules/react-scripts/scripts/start.js",
         "pack": "webpack"
     },
     "repository": {

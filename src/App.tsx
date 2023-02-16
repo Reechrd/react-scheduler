@@ -1,5 +1,5 @@
 import { cs } from 'date-fns/locale'
-import React, { useEffect, useState } from "react"
+import { useEffect, useState } from "react"
 import { View } from "./lib/components/nav/Navigation"
 import { Scheduler } from "./lib/Scheduler"
 import { EVENTS } from "./model/events"
@@ -30,15 +30,19 @@ const App = () => {
 			week={{
 				startHour: 0,
 				endHour: 23,
-				step: 60,
+				step: 30,
 				weekDays: [ 0, 1, 2, 3, 4, 5, 6 ],
 				weekStartOn: 1
 			}}
-			sx={{
-				height: '100%'
+			day={{
+				startHour: 0,
+				endHour: 23,
+				step: 60,
 			}}
-			disableDrag
+			sx={{height: '100%'}}
 
+			workingHoursEnd={17}
+			workingHoursStart={6}
 		/>
 	)
 }

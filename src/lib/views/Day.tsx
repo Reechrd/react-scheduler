@@ -13,7 +13,7 @@ import {
 import React from "react"
 import TodayTypo from "../components/common/TodayTypo"
 import EventItem from "../components/events/EventItem"
-import { RowsWithTime } from "../components/week/RowsWithTime"
+import { RowsWithTime } from "../components/day/RowsWithTime"
 import { MULTI_DAY_EVENT_HEIGHT, TODAY } from "../helpers/constants"
 import { useCalendarProps } from "../hooks/useCalendarProps"
 import { GridCell, GridHeaderCell, TableGrid } from "../styles/styles"
@@ -102,7 +102,7 @@ const Day = () => {
 		// Equalizing multi-day section height
 		const headerHeight = MULTI_DAY_EVENT_HEIGHT * allWeekMulti.length + 45
 		return (
-			<TableGrid days={1}>
+			<TableGrid  sx={{gridTemplateColumns: "60px repeat(1, 1fr)"}} days={1}>
 				{/* Header */}
 				<GridCell/>
 				<GridHeaderCell

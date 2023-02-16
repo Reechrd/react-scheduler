@@ -27,6 +27,9 @@ export const defaultProps: SchedulerProps = {
 	loading: undefined,
 	direction: "ltr",
 	locale: enUS,
+
+	workingHoursStart: 6,
+	workingHoursEnd: 17,
 }
 
 const StateContext = createContext<SchedulerProps>({
