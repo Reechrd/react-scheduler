@@ -14,10 +14,10 @@ import {
     startOfDay,
     startOfWeek,
 } from "date-fns"
-import React, {useCallback, useEffect, useMemo} from "react"
+import React, {useCallback, useEffect, useMemo, useState} from "react"
 import TodayTypo from "../components/common/TodayTypo"
 import EventItem from "../components/events/EventItem"
-import {RowsWithTime} from "../components/week/RowsWithTime"
+import {WeekRowsWithTime} from "../components/week/WeekRowsWithTime"
 import {MULTI_DAY_EVENT_HEIGHT, TODAY} from "../helpers/constants"
 import {useCalendarProps} from "../hooks/useCalendarProps"
 import {GridCell, GridHeaderCell, TableGrid} from "../styles/styles"
@@ -41,7 +41,7 @@ const Week = () => {
         selectedDate = TODAY,
         events = [],
         onViewChange,
-        onDateChange
+        onDateChange,
     } = useCalendarProps()
 
     const {weekStartOn, weekDays, startHour, endHour, step} = week!
@@ -117,11 +117,8 @@ const Week = () => {
             end: END_TIME
         }, {step}
     ).map((hour, index) => index), [step])
-
     const isThereToday = useMemo(()=>daysList.map((day)=>isToday(day)).includes(true), [daysList])
     const todaysIndex = useMemo(()=>daysList.map((day)=>isToday(day)).indexOf(true), [isThereToday])
-
-
     const columns = useMemo(()=>weekDays,[step, startHour])
 
     const renderTable = () => {
@@ -158,7 +155,7 @@ const Week = () => {
 				))}
 
 				{/* Time Cells */}
-				<RowsWithTime
+				<WeekRowsWithTime
                     rows={rows}
                     columns={columns}
                     isThereToday={isThereToday}

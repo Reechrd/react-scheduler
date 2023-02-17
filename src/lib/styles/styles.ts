@@ -39,9 +39,50 @@ export const GridCell = styled(Box, {
         else if (noWork) {
             color = theme.palette.grey[200]
             value = 0.6
-        }
-        else if (today && !noWork) value = 0.6
+        } else if (today && !noWork) value = 0.6
     }
+
+    let bgColor = alpha(color, value)
+
+    return ({
+        position: "relative",
+        borderColor: theme.palette.grey["200"],
+        borderWidth: "1px 0px 0px 1px",
+        borderStyle: "solid",
+        background: bgColor,
+        "& > button": {
+            width: "100%",
+            height: "100%",
+            borderRadius: 0,
+            cursor: "pointer",
+            "&:hover": {
+                background: alpha(theme.palette.primary.main, 0.1),
+            },
+        },
+        "& .rs__hover__op": {
+            cursor: "pointer",
+            "&:hover": {
+                opacity: 0.7,
+                textDecoration: "underline",
+            },
+        },
+    })
+})
+
+export const WeekGridCell = styled(Box, {
+    shouldForwardProp: prop => prop !== 'today'
+})<{ today?: boolean, weekend: boolean, hour: number }>(({theme, today = false, weekend = false, hour = 0}) => {
+    const {workingHoursEnd, workingHoursStart} = useCalendarProps()
+
+    let value = 0
+    let color = theme.palette.secondary.light
+
+    const noWork = weekend || !((workingHoursEnd ?? 17) >= hour && hour >= (workingHoursStart ?? 6))
+    if (today && noWork) value = 0.5
+    else if (noWork) {
+        color = theme.palette.grey[200]
+        value = 0.6
+    } else if (today && !noWork) value = 0.6
 
     let bgColor = alpha(color, value)
 

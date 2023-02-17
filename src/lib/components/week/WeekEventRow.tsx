@@ -1,21 +1,23 @@
 import React, { memo } from "react"
 import { useCalendarProps } from "../../hooks/useCalendarProps"
-import { CellWithEvent } from "./CellWithEvent"
-import { RowProps } from "./Row"
+import { WeekCellWithEvent } from "./WeekCellWithEvent"
 
-export type EventRowProps = RowProps & {
-	step: number,
+export type EventRowProps =  {
 	startHour: number,
 	hour: Date,
 	daysList: Date[],
+	rows: number[],
+	columns: number[],
+	step: number
+	row: number
 }
 
-export const EventRow = memo((props: EventRowProps) => {
+export const WeekEventRow = memo((props: EventRowProps) => {
 	const {events = []} = useCalendarProps()
 	const days = props.daysList.map((day, index) =>
-		<CellWithEvent
+		<WeekCellWithEvent
 			column={index}
-			hourIndex={props.hourIndex}
+			hourIndex={props.row}
 			day={day}
 			events={events}
 			step={props.step}

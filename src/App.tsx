@@ -30,7 +30,7 @@ const App = () => {
 			week={{
 				startHour: 0,
 				endHour: 23,
-				step: 30,
+				step: 60,
 				weekDays: [ 0, 1, 2, 3, 4, 5, 6 ],
 				weekStartOn: 1
 			}}
