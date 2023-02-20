@@ -40,7 +40,7 @@ const Month = () => {
 
 	const renderTable = () => {
 		return (
-			<TableGrid days={daysList.length} indent="0" className='MonthGrid'>
+			<TableGrid sx={{gridTemplateRows: '40px'}} days={daysList.length} indent="0" className='MonthGrid'>
 				{/* Header Days */}
 				{daysList.map((date) => (
 					<GridHeaderCell key={date.toISOString()} className='MonthHeaderCell'>

@@ -1,14 +1,10 @@
-# React scheduler
-## New Props
-| Prop name         	| Definition                        	| Type     	| Default Value 	|
-|-------------------	|-----------------------------------	|----------	|---------------	|
-| workingHoursEnd   	| konec pracovních hodin (včetně)   	| DayHours 	|       17      	|
-| workingHoursStart 	| začátek pracovních hodin (včetně) 	| DayHours 	|       6       	|
-
-___
-
-## My special color prop
-* Používá nový typ - Color
-* Colors
-    *  Higlight
-        * Cell - barava today sloupce a headeru
+## TODO
+* Podpora pro telefon
+* Zobrazovat skryté údálosti v kolonce s dnem (týdenní zobrazení)
+* Performance 
+* Customizovatelnost (sx)
+* Drag and drop 
+* Renderovat eventy z headru
+* Automatic scroll při přepnutí týden/den view na pracovní dobu
+* Samozřejmě bug fixy
+* Dopsat/přepsat dokumentaci k novým featurám 

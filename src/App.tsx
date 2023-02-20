@@ -21,6 +21,13 @@ const App = () => {
 			selectedDate={date}
 			view={view}
 			locale={cs}
+			/*localizationTexts={{
+				xudalosti: (pocet: number) => {
+					if(pocet == 1)
+						return `+ ${pocet} udalost`
+
+				}
+			}}*/
 			month={{
 				weekDays: [ 0, 1, 2, 3, 4, 5, 6 ],
 				weekStartOn: 1,

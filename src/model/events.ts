@@ -75,10 +75,20 @@ export const EVENTS: CalendarEvent[] = [
 		start: new Date("2022 1 26 09:00"),
 		end: new Date("2022 1 31 09:20"),
 	}, {
-		id: 'short',
+		id: 28,
 		title: "Short",
 		start: new Date("2023 2 18 09:00"),
 		end: new Date("2023 2 18 10:20"),
+	}, {
+		id: 29,
+		title: "test54 das  asd gf fsd  asdfasdas ",
+		start: new Date("2023 2 18 09:00"),
+		end: new Date("2023 2 18 13:20"),
+	},{
+		id: 30,
+		title: "test41 asd  assdas  dakdask asd ka ",
+		start: new Date("2023 2 18 09:00"),
+		end: new Date("2023 2 18 11:20"),
 	}, {
 		id: 'test',
 		title: "test",
@@ -89,17 +99,7 @@ export const EVENTS: CalendarEvent[] = [
 		title: "87",
 		start: new Date("2023 2 17 09:00"),
 		end: new Date("2023 2 17 10:20"),
-	}, {
-		id: 'test3',
-		title: "test54",
-		start: new Date("2023 2 18 21:00"),
-		end: new Date("2023 2 18 22:20"),
-	},{
-		id: 'test4',
-		title: "test41",
-		start: new Date("2023 2 18 13:00"),
-		end: new Date("2023 2 18 14:20"),
-	}, {
+	},  {
 		id: 'test5',
 		title: "testdfdsfdsfsd",
 		start: new Date("2023 2 19 14:00"),

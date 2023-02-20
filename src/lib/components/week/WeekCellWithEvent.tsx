@@ -20,7 +20,7 @@ export type CellWithEventProps = {
 
 export const WeekCellWithEvent = memo((props: CellWithEventProps): ReactElement => {
     const {direction, events, onEventDrop} = useCalendarProps()
-    const {ref, height = 1} = useThrottledResizeObserver<HTMLButtonElement>(100)
+    const {ref, height = 1, width=1} = useThrottledResizeObserver<HTMLButtonElement>(100)
     const minuteHeight = height / props.step
     const theme = useTheme()
 
@@ -61,7 +61,9 @@ export const WeekCellWithEvent = memo((props: CellWithEventProps): ReactElement 
                 minuteHeight={minuteHeight}
                 startHour={props.startHour}
                 step={props.step}
-                direction={direction ?? "ltr"}/>
+                direction={direction ?? "ltr"}
+                columnWidth={width}
+            />
 
             <ButtonBase
                 onClick={(e)=> onCellClick && onCellClick(start, end, e) }
